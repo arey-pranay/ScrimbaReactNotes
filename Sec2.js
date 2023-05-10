@@ -81,9 +81,12 @@ return (
         </div>
     )
     
+ 
 
 It implies that if props.setup is true, then execute the line. Because for an && statement to be true, both parts need to individually be true.
 So only if props.setup exists, we will execute the second part, i.e..... displaying that in an h3 element
+
+another example for conditional rendering {props.openSpots === 0 && <div className="card--badge">SOLD OUT</div>}
 
 --Other datatypes except string.. as propss
 return (
