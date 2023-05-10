@@ -94,3 +94,8 @@ return (
             />
          </div>
 )
+
+<img src={`../images/${props.img}`}>
+jsx to js by using {}. then use backtick notation of writing strings. we use ${js objectname} in this notation.
+
+
