@@ -126,8 +126,11 @@ export default [
   ]
 
 ----App.js
+
+
 import the data from "./data.js" or "./data"
 --pass the variables as props to the components
+export default function App() {
  const cards = data.map(item => {
         return (
             <Card 
@@ -140,7 +143,13 @@ import the data from "./data.js" or "./data"
             />
         )
     })        
-    
+  return (
+        <div>
+            <Navbar />
+            {cards}
+        </div>
+    )
+
   Mention these props and their uses in the Card component definition in the function Card() in the file 
   ----Card.js
   
