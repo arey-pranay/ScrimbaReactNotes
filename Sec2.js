@@ -134,6 +134,7 @@ export default function App() {
  const cards = data.map(item => {
         return (
             <Card 
+                key={item.id} //just to have a unique property for identification of each child element..
                 img={item.coverImg}
                 rating={item.stats.rating}
                 reviewCount={item.stats.reviewCount}
