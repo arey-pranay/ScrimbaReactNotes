@@ -181,7 +181,7 @@ export default function App() {
                 item={item}
             />
             
- --but we will also have to call the elements by adding an extra "items." in the definition of the function of Cards Component
+ --but we will also have to call the elements by adding an extra ".items" in the definition of the function of Cards Component
  
  return (
         <div className="card">
@@ -196,5 +196,14 @@ export default function App() {
             <p className="card--title">{props.item.title}</p>
             <p className="card--price"><span className="bold">From ${props.item.price}</span> / person</p>
         </div>
+        
+--if we don't want to add the extra ".items" to  the properties, we can also pass in the data as spreaded prop ig
+        return (
+            <Card
+                key={item.id}
+                {...item}
+                
+            />
+--in this way, the Card definition doesn't need to be changed much. It means that here you don't have to specify ".items" everytime to access the props specifically in your function definition of Cards.
  
  
