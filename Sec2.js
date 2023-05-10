@@ -173,3 +173,28 @@ export default function App() {
     )
 }
 
+--instead of passing each property as a part of prop, we can also pass the entire item
+    const cards = data.map(item => {
+        return (
+            <Card
+                key={item.id}
+                item={item}
+            />
+            
+ --but we will also have to call the elements by adding an extra "items." in the definition of the function of Cards Component
+ 
+ return (
+        <div className="card">
+            {badgeText && <div className="card--badge">{badgeText}</div>}
+            <img src={`../images/${props.item.coverImg}`} className="card--image" />
+            <div className="card--stats">
+                <img src="../images/star.png" className="card--star" />
+                <span>{props.item.stats.rating}</span>
+                <span className="gray">({props.item.stats.reviewCount}) • </span>
+                <span className="gray">{props.item.location}</span>
+            </div>
+            <p className="card--title">{props.item.title}</p>
+            <p className="card--price"><span className="bold">From ${props.item.price}</span> / person</p>
+        </div>
+ 
+ 
