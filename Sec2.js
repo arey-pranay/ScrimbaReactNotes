@@ -67,7 +67,10 @@ function App() {
       )
 }
 
+--Alt
 
+instead of passing function Contact(props){<h1>props.name</h1> <p>props.date</p>}
+we can also directly pass the js objects function Contact({name,date}){<h1>name</h1> <p>date</p>}
 ----Conditional Rendering
 
 return (
