@@ -6,7 +6,7 @@ How do different units of CSS work ??
 Why to put hero--header etc. (double dash in classNames)?
   
   
---Using Javascript inside JSX syntax by the helo if {} curly braces
+--Using Javascript inside JSX syntax by the help of {} curly braces
 function App() {
     const firstName = "Joe"
     const lastName = "Schmoe"
