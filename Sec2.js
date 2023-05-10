@@ -106,4 +106,57 @@ const pokemon = ["Bulbasaur", "Charmander", "Squirtle"]
 const paragraphs = pokemon.map(mon => `<p>${mon}</p>`)
 ["<p>Bulbasaur</p>", "<p>Charmander</p>", "<p>Squirtle</p>"]
 
+--Taking Data from outside javascript objects
+
+----Data.js
+export default [
+    {
+        id: 1,
+        title: "Life Lessons with Katie Zaferes",
+        description: "I will share with you what I call \"Positively Impactful Moments of Disappointment.\" Throughout my career, many of my highest moments only came after setbacks and losses. But learning from those difficult moments is what gave me the ability to rise above them and reach my goals.",
+        price: 136,
+        coverImg: "katie-zaferes.png",
+        stats: {
+            rating: 5.0,
+            reviewCount: 6
+        },
+        location: "Online",
+        openSpots: 0,
+    }
+  ]
+
+----App.js
+import the data from "./data.js" or "./data"
+--pass the variables as props to the components
+ const cards = data.map(item => {
+        return (
+            <Card 
+                img={item.coverImg}
+                rating={item.stats.rating}
+                reviewCount={item.stats.reviewCount}
+                location={item.location}
+                title={item.title}
+                price={item.price}
+            />
+        )
+    })        
+    
+  Mention these props and their uses in the Card component definition in the function Card() in the file 
+  ----Card.js
+  
+  export default function Card(props) {
+    return (
+        <div className="card">
+            <img src={`../images/${props.img}`} className="card--image" />
+            <div className="card--stats">
+                <img src="../images/star.png" className="card--star" />
+                <span>{props.rating}</span>
+                <span className="gray">({props.reviewCount}) • </span>
+                <span className="gray">{props.location}</span>
+            </div>
+            <p>{props.title}</p>
+            <p><span className="bold">From ${props.price}</span> / person</p>
+        </div>
+    )
+}
 
