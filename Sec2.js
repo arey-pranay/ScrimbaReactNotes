@@ -82,3 +82,15 @@ return (
 It implies that if props.setup is true, then execute the line. Because for an && statement to be true, both parts need to individually be true.
 So only if props.setup exists, we will execute the second part, i.e..... displaying that in an h3 element
 
+--Other datatypes except string.. as propss
+return (
+        <div>
+            <Joke 
+                punchline="It’s hard to explain puns to kleptomaniacs because they always take things literally."
+                isPun={true}
+                upvotes={10}
+                downvotes={2}
+                comments={[{author: "", body: "", title: ""}]}
+            />
+         </div>
+)
