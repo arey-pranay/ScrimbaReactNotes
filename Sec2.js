@@ -101,4 +101,9 @@ return (
 <img src={`../images/${props.img}`}>
 jsx to js by using {}. then use backtick notation of writing strings. we use ${js objectname} in this notation.
 
+--Converting an array of strings to html elements.
+const pokemon = ["Bulbasaur", "Charmander", "Squirtle"]
+const paragraphs = pokemon.map(mon => `<p>${mon}</p>`)
+["<p>Bulbasaur</p>", "<p>Charmander</p>", "<p>Squirtle</p>"]
+
 
