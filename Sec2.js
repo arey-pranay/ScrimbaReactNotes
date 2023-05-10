@@ -68,3 +68,17 @@ function App() {
 }
 
 
+----Conditional Rendering
+
+return (
+        <div>
+            {props.setup && <h3>Setup: {props.setup}</h3>}
+            <p>Punchline: {props.punchline}</p>
+            <hr />
+        </div>
+    )
+    
+
+It implies that if props.setup is true, then execute the line. Because for an && statement to be true, both parts need to individually be true.
+So only if props.setup exists, we will execute the second part, i.e..... displaying that in an h3 element
+
