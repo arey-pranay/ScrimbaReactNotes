@@ -33,3 +33,10 @@ Anytime you want to pass data into a component so that component can determine w
 
 Q. When would you want to use state instead of props?
 Anytime you want a component to maintain some values from within the component. (And "remember" those values even when React re-renders the component).
+
+--Problem..
+
+When you render an array on the screen, and then put a button to update the array, the array gets updated, but the updated array isn't rendered on the screen.
+This is because React doesn't normally care about the local variable changes in your code.
+This is why we need states. To kinda update stuff even more dynamically.
+
