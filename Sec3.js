@@ -77,4 +77,9 @@ e.g.,
     function add() {
         setCount(count = count + 1)
     }
+
+    AND ALSO THE BEST PRACTICE WHEN YOU WANT TO DO/ACHIEVE SOMETHING LIKE THIS(updating the new value of the state by depending on the previous state's value )
+        function add() {
+        setCount(prevCount => prevCount + 1)
+    }
     
