@@ -24,3 +24,12 @@ export default function App() {
         </div>
     )
 }
+
+--States Vs Props
+
+Q. When would you want to use props instead of state?
+Anytime you want to pass data into a component so that component can determine what will get displayed on the screen.
+
+
+Q. When would you want to use state instead of props?
+Anytime you want a component to maintain some values from within the component. (And "remember" those values even when React re-renders the component).
