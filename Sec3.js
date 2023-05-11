@@ -59,7 +59,7 @@ Both these codes return "Yes", it's just that the upper code destructurizes the 
 the func that we get in the React.useState output array, is used to change the value from the array
 
 e.g.,
-    const [count, setCount] = React.useState(0)
+    const [count, setCount] = React.useState(0) //This is the convention for naming the value and the function. since this function here is always used to set the state's value, therefore it's name is mostly `set$[nameOfTheValue]`
     function add(){
         setCount(count+1)
     }
@@ -83,3 +83,7 @@ e.g.,
         setCount(prevCount => prevCount + 1)
     }
     
+So it means that if you ever need the old value of state to help you determine the new value of state, you should pass a callback function to your state setter function instead of using state directly. 
+This callback function will receive the old value of state as its parameter, which you can then use to determine your new value of state.
+ 
+
