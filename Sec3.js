@@ -203,3 +203,7 @@ export default function App(props) {
         </main>
     )
 }
+
+Here the style property is passed a javascript object called "styles" and that object uses a ternary operator to change the bgcolor (dynamically => using props received to it)
+note that the background-color property is changed to backgroundColor for following javascript/React naming convention.
+
