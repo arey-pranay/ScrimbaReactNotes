@@ -85,5 +85,16 @@ e.g.,
     
 So it means that if you ever need the old value of state to help you determine the new value of state, you should pass a callback function to your state setter function instead of using state directly. 
 This callback function will receive the old value of state as its parameter, which you can then use to determine your new value of state.
+
+When we plan to toggle a value, we should just put it as true or false and then use the update function to take the !ofTheValue.
+
+Suppose you have to change the star property of your card from glowing to not glowing, then you'll need to update your card's state with the entire card as it is plus the new change, i.e., the glowing star. 
+So you can do something like
+function toggleFav(){
+  setContactCard(prevState => {
+ return{...prevState, glow:false}
+}   
+}
+This ... is called the spread operator
  
 
