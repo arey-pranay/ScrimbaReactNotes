@@ -94,7 +94,55 @@ function toggleFav(){
   setContactCard(prevState => {
  return{...prevState, glow:false}
 }   
-}
+                 }
 This ... is called the spread operator
+                 
+                 
+               
+--.push() shouldn't be used to modify the state directly           
+ const [thingsArray, setThingsArray] = React.useState(["Thing 1", "Thing 2"])
+    
+    function addItem() {
+      
+        setThingsArray(prevState => {
+            return [...prevState, `Thing ${prevState.length + 1}`]
+        }                ---YES
+        
+       thingsArray.push() --NO
+    }
+ 
+--Toggling onClick
+
+export default function App() {
+    const [contact, setContact] = React.useState({
+        firstName: "John",
+        lastName: "Doe",
+        phone: "+1 (719) 555-1212",
+        email: "itsmyrealname@example.com",
+        isFavorite: false
+    })
+    
+    let starIcon = contact.isFavorite ? "star-filled.png" : "star-empty.png"
+    
+    function toggleFavorite() {
+        setContact(prevContact => {
+            return {
+                ...prevContact,
+                isFavorite: !prevContact.isFavorite
+            }
+        })
+    }
+    
+    return (
+                    <img 
+                        src={`../images/${starIcon}`} 
+                        className="card--favorite"
+                        onClick={toggleFavorite}
+                    />
+             )
+             
+             
+             
+             
  
 
