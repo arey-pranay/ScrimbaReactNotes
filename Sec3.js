@@ -183,4 +183,23 @@ export default function Star(props) {
              
  Whenever the state of a parent component is changed, the 'child components that receive that state as props', get rendered again.. (re-rendered);
  
+--Styling Dynamically using React.js.......
 
+import React from "react"
+import boxes from "./boxes"
+export default function App(props) {
+    const [squares, setSquares] = React.useState(boxes)
+    
+    const styles = {
+        backgroundColor: props.darkMode ? "#222222" : "#cccccc"
+    }
+    
+    const squareElements = squares.map(square => (
+        <div style={styles} className="box" key={square.id}></div>
+    ))
+    return (
+        <main>
+            {squareElements}
+        </main>
+    )
+}
