@@ -143,6 +143,44 @@ export default function App() {
              
              
              
+the onClick function can only applied to HTML elements. So if you want to use it on your own component, then you can create another custom-made function called handleClick 
+
+----App.js
+
+import Star from "./Star"
+
+export default function App() {
+    const [contact, setContact] = React.useState({
+        firstName: "John",
+        lastName: "Doe",
+        phone: "+1 (719) 555-1212",
+        email: "itsmyrealname@example.com",
+        isFavorite: true
+    })
+    
+    function toggleFavorite() {
+        setContact(prevContact => ({
+            ...prevContact,
+            isFavorite: !prevContact.isFavorite
+        }))
+    }
+  
+return(
+<Star isFilled={contact.isFavorite} handleClick={toggleFavorite} />
+)
+
+----Star.js
+export default function Star(props) {
+    const starIcon = props.isFilled ? "star-filled.png" : "star-empty.png"
+    return (
+        <img 
+            src={`../images/${starIcon}`} 
+            className="card--favorite"
+            onClick={props.handleClick}
+        />
+    )
+}
              
+ Whenever the state of a parent component is changed, the 'child components that receive that state as props', get rendered again.. (re-rendered);
  
 
